@@ -1,0 +1,130 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+ul,li{
+	list-style: none;
+}
+/**/
+#box,#startAn,#list,#list>li,#list>li>div{
+	width: 100%;
+	height: 100%;
+}
+#box{
+	position: relative;
+}*
+#startAn{
+	background: pink;
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*改变叠放的层次*/
+	z-index: 13;
+}
+/*loading的点*/
+#dot::before{
+	content: ".";
+	font-size: 60px;
+	color: blue;
+	/*添加动画效果*/
+	animation:dotAn 1s infinite;
+}
+/*定义一个关键帧动画*/
+@keyframes dotAn{
+	0%{
+		content: ".";
+	}
+	50%{
+		content: "..";
+	}
+	100%{
+		content: "...";
+	}
+}
+#list{
+	background: #ccc;
+	/*一开始ul应该停在第2个li，也就是“真正”的第一个li的位置*/
+	/*默认往上平移个度*/
+	/*这样就显示第2个li，也就是真正的第一屏*/
+	transform:translateY(-100%);
+}
+/*ulÀïÃæµÄli*/
+#list .oneBox{
+	/*ÉèÖÃ±³¾°Í¼Æ¬*/
+	background-image: url(../img/a.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#list .twoBox{
+	/*ÉèÖÃ±³¾°Í¼Æ¬*/
+	background-image: url(../img/b.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#list .threeBox{
+	/*ÉèÖÃ±³¾°Í¼Æ¬*/
+	background-image: url(../img/c.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#list .fourBox{
+	/*ÉèÖÃ±³¾°Í¼Æ¬*/
+	background-image: url(../img/d.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+/*¼ýÍ·*/
+#arrow{
+	width: 90px;
+	height: 52px;
+	background-image: url(../img/arr.png);
+	position: absolute;
+	left: 50%;
+	bottom: 30px;
+	z-index: 10;
+	margin-left: -45px;
+	/*¶¯»­*/
+	animation:arrowmove 1s infinite;
+}
+/*¹Ø¼üÖ¡¶¯»­*/
+@keyframes arrowmove{
+	0%{
+		opacity: 0;
+		transform:translateY(0);
+	}
+	50%{
+		opacity: 1;
+		transform:translateY(-30px);
+	}
+	100%{
+		opacity: 0;
+		transform:translateY(-50px);
+	}
+}
+/*ÒôÀÖÍ¼±ê*/
+#music{
+	width: 47px;
+	height: 47px;
+	background-image: url(../img/music.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 12;
+}
+#music.active{
+	animation:musicmove 1s linear infinite;
+}
+/*¹Ø¼üÖ¡¶¯»­*/
+@keyframes musicmove{
+	100%{
+		transform:rotate(360deg);
+	}
+}

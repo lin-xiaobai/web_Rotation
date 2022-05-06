@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>h5页面案例</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<!-- 放在一个盒子里面 -->
+	<div id="box">
+		<!-- 开机动画 -->
+		<div id="startAn">
+			<div>
+				<span>loading</span>
+				<span id="dot"></span>
+			</div>
+			<!-- 显示百分比 -->
+			<span id="showPercent">0%</span>
+		</div>
+		<!-- 页面主体内容:无序列表 -->
+		<ul id="list">
+			<!-- 无缝衔接的li的个数要在原来的基础上加多2个li -->
+			<li>
+				<div class="oneBox"></div>
+			</li>
+			<li>
+				<div class="twoBox"></div>
+			</li>
+			<li>
+				<div class="threeBox"></div>
+			</li>
+			<li>
+				<div class="fourBox"></div>
+			</li>
+		</ul>
+		<!-- 箭头 -->
+		<div id="arrow"></div>
+		<!-- 音乐图标 -->
+		<div id="music" class="">
+			<!-- 音频元素 -->
+			<audio id="playmp" src="media/music.mp3" loop></audio>
+		</div>
+	</div>
+</body>
+<script src="js/index.js"></script>
+</html>
